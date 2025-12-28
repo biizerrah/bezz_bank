@@ -1,12 +1,16 @@
 
+from .cliente import Cliente
+
 class ContaBancaria:
 
-    def __init__(self, titular, saldo, numero_conta):
+    def __init__(self, titular: Cliente, num_conta:str):
 
-        self.titular = titular #titular vai receber o objeto cliente que foi criado na classe cliente por meio da associacao
-        self.saldo = saldo
-        self.numero_conta = numero_conta
+        self.titular = titular
+        self.__saldo = 0.0
+        self.num_conta = num_conta
 
+    def __str__(self):
+        return f"(Conta: {self.num_conta})"
 
     def sacar():
         pass

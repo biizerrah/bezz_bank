@@ -14,7 +14,7 @@ O **Bezz Bank** simula operações financeiras essenciais através de um sistema
 
 ### 🛠️ Tecnologias e Conceitos Aplicados
 
-* **Linguagem:** Python 3.x
+* **Linguagem:** Python 3.13
 * **Paradigma:** Orientação a Objetos (POO)
 * **Arquitetura:** Modular (Separação entre `main` e pacote `bezz_core`)
 

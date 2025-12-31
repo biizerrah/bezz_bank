@@ -10,7 +10,7 @@ Este projeto foi criado com foco educacional para demonstrar o domínio dos pila
 
 ## 🚀 Sobre o Projeto
 
-O **Bezz Bank** simula operações financeiras essenciais através de um sistema backend organizado em pacotes. A lógica de negócio diferencia comportamentos entre tipos de contas (Corrente vs. Poupança) utilizando polimorfismo, garantindo que regras como limites de crédito e rendimentos sejam aplicadas corretamente.
+O **Bezz Bank** simula operações financeiras essenciais através de um sistema backend organizado em pacotes, utilizando polimorfismo, garantindo que regras como saldo da conta, extrato, depositos e saques sejam aplicadas corretamente.
 
 ### 🛠️ Tecnologias e Conceitos Aplicados
 

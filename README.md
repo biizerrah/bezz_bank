@@ -33,13 +33,14 @@ O código foi estruturado para atender a requisitos rigorosos de desenvolvimento
 ## 📂 Estrutura do Projeto
 
 ```text
-projeto_bezz_bank/
+bezz_bank/
 │
-├── main.py                 # Interface do usuário (Menu CLI)
+├── main.py                 # Interface do Sistema (Menu Interativo e Tratamento de Erros)
 │
-└── bezz_core/              # Pacote com a Lógica de Negócio
-    ├── __init__.py         # Gerenciador de exportações
-    ├── conta_bancaria.py   # Superclasse Base
-    ├── conta_corrente.py   # Lógica de Limite e Taxas
-    ├── conta_poupanca.py   # Lógica de Rendimentos
-    └── cliente.py          # Dados do titular
+└── bezz_core/              # Pacote com a Lógica de Negócio (Core)
+    ├── __init__.py         # Inicializador do pacote
+    ├── cliente.py          # Classe Cliente (Associação)
+    ├── conta_bancaria.py   # Superclasse Base (Lógica compartilhada)
+    ├── conta_corrente.py   # Subclasse (Polimorfismo e Taxas)
+    ├── historico.py        # Registro de Transações (Composição)
+    └── excecoes.py         # Tratamento de Erros Personalizados

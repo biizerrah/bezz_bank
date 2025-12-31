@@ -1,5 +1,6 @@
 
 from .cliente import Cliente
+from .historico import Historico
 
 class ContaBancaria:
 
@@ -8,6 +9,7 @@ class ContaBancaria:
         self.titular = titular
         self._saldo = 0.0
         self.num_conta = num_conta
+        self.historico = Historico()
 
     @property
     def saldo(self):
@@ -19,7 +21,8 @@ class ContaBancaria:
     def depositar(self,valor):
         if valor > 0:
             self._saldo += valor
-            print(f"Déposito no valor {valor} ralizado!")
+            self.historico.adicionar_transacao(f"Depósito: +R${valor:.2f}")
+            print(f"Depósito de R${valor:.2f} realizado!")
         
 
     def sacar(self, valor):
@@ -29,3 +32,7 @@ class ContaBancaria:
         else:
             print("Saldo Insuficiente!")
 
+    def exibir_extrato(self):
+        print(f"Cliente: {self.titular.nome}")
+        self.historico.imprimir()
+        print(f"Saldo Atual: R${self.saldo:.2f}\n")

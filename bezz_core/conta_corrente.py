@@ -1,4 +1,5 @@
 from .conta_bancaria import ContaBancaria
+from .excecoes import SaldoInsuficienteError
 
 class ContaCorrente(ContaBancaria):
 
@@ -9,14 +10,15 @@ class ContaCorrente(ContaBancaria):
 
         if valor > 0 and self._saldo >= valor_total:
             self._saldo -= valor_total
-            print(f"Saque de R${valor:.2f} (+ R${taxa_saque:.2f} de taxa) realizado!")
-            print(f"Saldo restante: R${self._saldo:.2f}")
+
+            self.historico.adicionar_transacao(f"Saque: -R${valor:.2f} (Taxa: R${taxa_saque:.2f})")
+            print(f"Saque de R${valor:.2f} realizado com sucesso.")
             return True
         else:
-            print(f"Saldo insuficiente para saque + taxa (Total: R${valor_total:.2f})")
-            return False
+            raise SaldoInsuficienteError(self._saldo, valor_total)
         
     def taxa_manutencao(self):
         taxa = 15.0
         self._saldo -= taxa
-        print(f"Taxa de manutenção de R${taxa:.2f} debitada.")
+        self.historico.adicionar_transacao(f"Manutenção Mensal: -R${taxa:.2f}")
+        print("Taxa de manutenção debitada.")

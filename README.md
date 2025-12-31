@@ -22,7 +22,7 @@ O **Bezz Bank** simula operações financeiras essenciais através de um sistema
 
 O código foi estruturado para atender a requisitos rigorosos de desenvolvimento:
 
-* ✅ **Herança:** Uso de superclasse `ContaBancaria` e subclasses `ContaCorrente` e `ContaPoupanca`.
+* ✅ **Herança:** Uso de superclasse `ContaBancaria` e a subclasse `ContaCorrente`.
 * ✅ **Polimorfismo:** Sobrescrita de métodos (Override) no método `sacar()`.
 * ✅ **Encapsulamento:** Proteção de atributos sensíveis (como saldo) com modificadores de acesso privados e uso de *Getters/Setters*.
 * ✅ **Tratamento de Erros:** Implementação de Exceções Personalizadas para regras de negócio.

@@ -17,8 +17,4 @@ class ContaCorrente(ContaBancaria):
         else:
             raise SaldoInsuficienteError(self._saldo, valor_total)
         
-    def taxa_manutencao(self):
-        taxa = 15.0
-        self._saldo -= taxa
-        self.historico.adicionar_transacao(f"Manutenção Mensal: -R${taxa:.2f}")
-        print("Taxa de manutenção debitada.")
+
